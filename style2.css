@@ -1,0 +1,288 @@
+/* 폰트 설정 */
+@font-face {
+    font-family: 'Pretendard';
+    src: url('fonts/Pretendard-Bold.woff2') format('woff2');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('fonts/Pretendard-Light.woff2') format('woff2');
+    font-weight: 300;
+}
+
+/* 기본 설정 */
+body {
+    font-family: 'Pretendard', sans-serif;
+    background: #140a0a;
+    margin: 0;
+    transition: 1s;
+    aspect-ratio: 1/2;
+}
+
+.text {
+    font-size: 48px;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    padding: 1em 1em;
+    transition: 0.5s;
+    line-height: 1.6; 
+    margin: 0 4em;  /* 좌우 간격 */
+}
+
+.background-image-absolute {
+    position: absolute;
+    width: 100%;
+    top: 80%;
+    z-index: -1;
+}
+
+.background-image-absolute img {
+    width: 100%;
+}
+
+.wave-image img {
+    width: 100%;
+}
+
+.wave-image:hover img {
+    animation: wave-animation 5s linear infinite;
+}
+
+.backgound-image {
+    position: fixed;
+    top: 0;
+    z-index: -3;
+    width: 100vw;
+}
+
+.backgound-image img {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;  /* 밑줄 없애기 */
+    color: inherit;         /* 링크 색상을 부모 요소의 색상으로 상속 */
+}
+
+a:visited {
+    color: inherit;         /* 클릭 후 색상 유지 */
+    text-decoration: none;  /* 클릭 후 밑줄 없애기 */
+}
+
+@keyframes wave-animation {
+    0% {
+        transform: translateX(0%);
+    }
+    25% {
+        transform: translateX(50%);
+    }
+    75% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+/* 헤더 */
+header {
+    width: 100%;
+}
+
+header img.logo {
+    width: 100px;
+    height: auto;
+    display: block;
+}
+
+header nav.header-nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    list-style: none;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 0 120px;
+}
+
+header nav.header-nav ul li {
+    color: #ec292f;
+    font-size: 18px;
+}
+
+header nav.header-nav ul li.logo {
+    margin: 0;
+}
+
+/* 반응형 미디어 쿼리 */
+@media (max-width: 1200px) {
+    .text {
+        font-size: 48px;
+        padding: 3em 1em;
+    }
+
+    header img.logo {
+        width: 80px;
+    }
+
+    header nav.header-nav ul li {
+        font-size: 16px;
+    }
+
+    .background-image-absolute {
+        height: 50%;
+    }
+
+    .background-image-absolute2,
+    .image-container {
+        width: 100%;
+        margin-top: 50%;
+    }
+
+    .image-item img {
+        max-width: 150px;
+    }
+
+    .wine-title {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .text {
+        font-size: 36px;
+        padding: 2em 1em;
+    }
+
+    header {
+        flex-direction: column; /* 세로 방향 정렬 */
+    }
+
+    header img.logo {
+        width: 60px;
+    }
+
+    header nav.header-nav ul {
+        flex-direction: column; /* 메뉴 세로 정렬 */
+    }
+
+    .background-image-absolute {
+        width: 100%;
+    }
+
+    .background-image-absolute2,
+    .image-container {
+        padding-top: 220px;
+    }
+
+    .image-item img {
+        max-width: 120px;
+    }
+
+    .wine-title {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .text {
+        font-size: 28px;
+        padding: 1em;
+    }
+
+    header img.logo {
+        width: 50px;
+    }
+
+    header nav.header-nav ul li {
+        font-size: 14px;
+    }
+
+    .image-item img {
+        max-width: 100px;
+    }
+
+    .wine-title {
+        font-size: 10px;
+    }
+}
+
+/* 와인 컨테이너 스타일 */
+.wine_container {
+    display: flex;
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center;
+    flex-direction: column;  /* 세로 정렬 */
+    width: 100%;
+}
+
+.image-column {
+    margin-top: 35px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3열 */
+    gap: 20px;
+    justify-items: center;
+}
+
+.image-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+}
+
+.image-item img {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+}
+
+.wine-info .wine-title {
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 1em 2em;
+    transition: 0.5s;   
+    margin: 0;
+}
+
+.wine-info .wine-subtitle {
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+
+.button-container {
+    text-align: center; /* 버튼들을 가운데 정렬 */
+    margin-top: 20px; /* 버튼 상단 여백 */
+}
+
+/* 버튼 기본 스타일 */
+.btn {
+    background-color: white; /* 버튼 배경색 */
+    color: black; /* 글자 색 */
+    border: none; /* 테두리 제거 */
+    padding: 15px 30px; /* 버튼 여백을 더 크게 설정 */
+    font-size: 18px; /* 글자 크기 키움 */
+    border-radius: 5px; /* 둥근 모서리 */
+    cursor: pointer; /* 클릭할 수 있는 포인터 */
+    margin: 0 70px;  /* 버튼 간 간격 */
+    margin-bottom: 200px; /* 버튼 아래 간격 추가 */
+}
+
+
+.btn {
+    width: 200px; 
+}
+
+.btn:hover {
+    background-color: #555; /* 마우스를 올렸을 때 배경색 변화 */
+    color: white; /* 글자 색을 흰색으로 변경 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 추가 */
+}

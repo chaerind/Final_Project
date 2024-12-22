@@ -1,0 +1,380 @@
+
+/* 기본 설정 */
+@font-face {
+    font-family: 'Pretendard';
+    src: url('fonts/Pretendard-Bold.woff2') format('woff2');
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('fonts/Pretendard-Light.woff2') format('woff2');
+    font-weight: 300;
+}
+
+body {
+    font-family: 'Pretendard', sans-serif;
+    background: #140a0a;
+    aspect-ratio: 1/2;
+    transition: 1s;
+    margin: 0;
+}
+
+
+
+main {
+    padding-top: 2px; 
+}
+
+
+/* 헤더 */
+header {
+    width: 100%;
+}
+
+header img.logo {
+    width: 100px;
+    height: auto;
+    display: block;
+}
+
+header nav.header-nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    list-style: none;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 0 120px;
+}
+
+header nav.header-nav ul li {
+    color: #ec292f;
+    font-size: 18px;
+}
+
+header nav.header-nav ul li.logo {
+    margin: 0;
+}
+
+
+
+/* 배경 이미지 */
+.wave-image {
+    position: relative;
+    z-index: -1; 
+}
+
+.backgound-image {
+    position: relative;
+    z-index: -3;  
+    width: 80%;
+    margin: 0 auto;
+
+}
+
+.background-image-absolute,
+.background-image-absolute2 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    z-index: -2;
+}
+
+.background-image-absolute {
+    left: 0;
+}
+
+.background-image-absolute2 {
+    right: 0;
+}
+
+.background-image-absolute img,
+.background-image-absolute2 img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+    margin-top: 220px;
+}
+
+/* 메인 콘텐츠 */
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* 반응형 대응 */
+
+}
+
+/* 텍스트 스타일 */
+.text {
+    font-size: 68px;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    padding: 1em 2em;
+    transition: 0.5s;   
+}
+
+/* 애니메이션 */
+.wave-image img {
+    width: 100%;
+}
+.wave-image:hover img {
+    animation-name: wave-animation;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+/* 고정된 배경 */
+.background-image {
+    position: fixed;
+    top: 100px;
+    z-index: -1;
+    padding: 0 40px;
+
+}
+
+.background-image img {
+    width: 100%;
+}
+
+
+/* 와인 6개 */
+.wine1, .wine2, .wine3, .wine4, .wine5, .wine6 {
+    transition: all 0.3s ease; 
+    width: 200px;  
+    margin-bottom: 10px;
+}
+
+.wine1:hover {
+    content: url("img/wine1.png");
+}
+
+.wine2:hover {
+    content: url("img/wine2.png");
+}
+
+.wine3:hover {
+    content: url("img/wine3.png");
+}
+
+.wine4:hover {
+    content: url("img/wine4.png");
+}
+
+.wine5:hover {
+    content: url("img/wine5.png");
+}
+
+.wine6:hover {
+    content: url("img/wine6.png");
+} 
+
+.image-row, .image-row2, .image-row3 {
+display: flex;
+justify-content: center; 
+}
+
+
+
+.image-container {
+    position: relative;
+    z-index: 1;  
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+
+a {
+    text-decoration: none;  /* 밑줄 없애기 */
+    color: inherit;         /* 링크 색상을 부모 요소의 색상으로 상속 */
+}
+
+/* 클릭했을 때 스타일 */
+a:visited {
+    color: inherit;         /* 클릭 후 색상도 부모 색상으로 유지 */
+    text-decoration: none;  /* 클릭 후 밑줄 없애기 */
+}
+
+
+/* 반응형 미디어 쿼리 */
+@media (max-width: 1200px) {
+    .text {
+        font-size: 48px;
+        padding: 2em 1em;
+    }
+
+    header img.logo {
+        width: 80px;
+    }
+
+    header nav.header-nav ul li {
+        font-size: 16px;
+    }
+
+    .background-image-absolute,
+    .background-image-absolute2,
+    .image-container
+     {
+        width: 100%; /* 전체 너비로 변경 */
+        height: 50%; /* 높이를 조정 */
+    }
+
+    .background-image-absolute2,
+    .image-container {
+        margin-top: 50%;
+    }
+
+
+}
+
+@media (max-width: 768px) {
+    .text {
+        font-size: 36px;
+        padding: 2em 1em;
+    }
+
+    header {
+        flex-direction: column; /* 세로 방향으로 정렬 */
+    }
+
+    header img.logo {
+        width: 60px;
+    }
+
+    header nav.header-nav ul {
+        flex-direction: column; /* 메뉴를 세로로 정렬 */
+    }
+
+    .background-image-absolute,
+    .image-container {
+        width: 100%;
+
+    }
+    
+    .background-image-absolute2,
+    .image-container {
+        width: 100%;
+        padding-top: 220px;   
+    }
+
+    
+    .image-container img {
+        max-width: 40px;  /* 이미지 최대 너비를 40px로 설정 */
+    }
+    
+    
+    
+}
+
+@media (max-width: 480px) {
+    .text {
+        font-size: 28px;
+        padding: 1em;
+    }
+
+    header img.logo {
+        width: 50px;
+    }
+
+    header nav.header-nav ul li {
+        font-size: 14px;
+    }
+}
+
+
+
+
+@media (max-width: 1000px) {
+    body {
+        background: #2a0517;
+
+    }
+    .text {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 800px) {
+    body {
+        background: purple;
+    }
+    .text {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        background-color: #140a0a;
+    }
+    .text {
+        font-size: 20px;
+    }
+}
+
+/* 기본 스타일 */
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;  /* 이미지들 간격을 적당히 띄워줌 */
+    gap: 20px;  /* 각 이미지 간의 간격 설정 */
+}
+
+.image-container img {
+    width: 100%;  /* 기본적으로 이미지 크기를 부모 요소에 맞게 설정 */
+    max-width: 200px;  /* 최대 너비를 설정하여 이미지 크기를 제한 */
+    height: auto;  /* 비율에 맞게 높이 자동 조정 */
+}
+
+
+
+
+
+/* 미디어 쿼리 적용 (화면 크기별로 스타일 변경) */
+@media (max-width: 1200px) {
+    .image-container {
+        justify-content: center;  /* 화면 크기가 작아지면 이미지들 가운데 정렬 */
+    }
+
+    .image-container img {
+        max-width: 100px;  /* 화면 크기가 작아지면 이미지 크기를 줄여줌 */
+    }
+}
+
+@media (max-width: 768px) {
+    .image-container {
+        justify-content: center;  /* 화면 크기 작아지면 가운데 정렬 */
+    }
+
+    .image-container img {
+        max-width: 80px;  /* 이미지 크기 더 줄여줌 */
+    }
+}
+
+@media (max-width: 480px) {
+    .image-container {
+        justify-content: center;  /* 이미지들 가운데 정렬 */
+    }
+
+    .image-container img {
+        max-width: 60px;  /* 이미지 크기 더욱 줄여줌 */
+    }
+}
+
+@media (max-width: 345px) {
+    .image-container {
+        justify-content: center;  /* 이미지들 가운데 정렬 */
+    }
+
+    .image-container img {
+        max-width: 30px;  /* 이미지 크기 더욱 줄여줌 */
+    }
+}
+
+
